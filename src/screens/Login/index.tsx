@@ -2,7 +2,9 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { RootStackParamList } from '../navigation';
+import { RootStackParamList } from '../../Router';
+
+import { Colors } from '~/common/styles/root';
 
 type OverviewScreenNavigationProps = StackNavigationProp<RootStackParamList, 'Overview'>;
 
@@ -19,7 +21,7 @@ export default function Overview() {
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('Details', { name: 'Dan' })}>
-          <Text style={styles.buttonText}>Show Details</Text>
+          <Text style={styles.buttonText}>Usar senha do celular</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -29,7 +31,7 @@ export default function Overview() {
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: '#6366F1',
+    backgroundColor: '#fff',
     borderRadius: 24,
     elevation: 5,
     flexDirection: 'row',
@@ -44,14 +46,14 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
   },
   buttonText: {
-    color: '#FFFFFF',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '500',
     textAlign: 'center',
   },
   container: {
     flex: 1,
     padding: 24,
+    backgroundColor: Colors.secondary,
   },
   main: {
     flex: 1,
@@ -62,9 +64,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 64,
     fontWeight: 'bold',
+    color: '#fff',
   },
   subtitle: {
-    color: '#38434D',
+    color: '#fff',
     fontSize: 36,
   },
 });
