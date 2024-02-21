@@ -1,12 +1,6 @@
-import { ReactNode } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Linking, ScrollView } from 'react-native';
 
-import { Colors } from '~/common/styles/root';
-
-interface CardBlogProps {
-  text: string;
-  link: string;
-}
+import { colors } from '~/common/styles/global';
 
 export function CardTips() {
   return (
@@ -15,20 +9,26 @@ export function CardTips() {
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{ marginLeft: 24, paddingRight: 32 }}>
-        <TouchableOpacity style={styles.button} onPress={() => Linking.openURL('')}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => Linking.openURL('https://nubank.com.br/')}>
           <Text>
             Pague <Text style={styles.linkText}>boletos no crédito</Text> em até 12x, direto no app
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => Linking.openURL('')}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => Linking.openURL('https://nubank.com.br/')}>
           <Text>
             <Text style={styles.linkText}>Aumente seu limite</Text> do cartão hoje com o Nu Limite
             Garantido.
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => Linking.openURL('')}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => Linking.openURL('https://nubank.com.br/')}>
           <Text>
             <Text style={styles.linkText}>Convide amigos para o nubank</Text> e desbloqueie brasões
             incríveis
@@ -43,8 +43,9 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 16,
     paddingBottom: 24,
-    borderBottomColor: '#D9D9D9',
+    borderBottomColor: colors.lightGray,
     borderBottomWidth: 2,
+    backgroundColor: colors.background,
   },
 
   button: {
@@ -53,10 +54,10 @@ const styles = StyleSheet.create({
     minHeight: 70,
     width: 280,
     borderRadius: 15,
-    backgroundColor: '#D9D9D9',
+    backgroundColor: colors.lightGray,
   },
 
   linkText: {
-    color: Colors.secondary,
+    color: colors.secondary,
   },
 });
