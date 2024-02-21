@@ -1,46 +1,57 @@
 import { Ionicons } from '@expo/vector-icons';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-import { Colors } from '~/common/styles/root';
+import { colors, fontSizes } from '~/common/styles/global';
 
 export function Loan() {
   return (
-    <View style={styles.containerCredidCard}>
-      <View style={styles.creditCardView}>
+    <View style={styles.containerLoan}>
+      <View style={styles.header}>
         <Text style={styles.title}>Empréstimo</Text>
         <Ionicons name="chevron-forward-outline" size={20} />
       </View>
 
-      <View style={styles.invoiceInfo}>
-        <Text style={styles.invoiceTitle}>Valor Disponível de até</Text>
-        <Text style={styles.invoiceValue}>R$50.000,00</Text>
+      <View style={styles.loanInfo}>
+        <Text style={styles.loanTitle}>Valor Disponível de até</Text>
+        <Text style={styles.loanValue}>R$50.000,00</Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  containerCredidCard: {
+  containerLoan: {
     paddingTop: 30,
     paddingRight: 24,
     paddingLeft: 24,
     paddingBottom: 24,
-    borderBottomColor: '#D9D9D9',
+    borderBottomColor: colors.lightGray,
     borderBottomWidth: 2,
+    backgroundColor: colors.background,
   },
 
-  creditCardView: { flexDirection: 'row', justifyContent: 'space-between' },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 
   title: {
-    fontSize: 18,
+    fontSize: fontSizes.large,
     fontWeight: '500',
     marginBottom: 16,
     color: 'black',
   },
 
-  invoiceInfo: {},
+  loanInfo: {},
 
-  invoiceTitle: { fontSize: 16, fontWeight: '400', marginBottom: 6 },
+  loanTitle: {
+    fontSize: fontSizes.large,
+    fontWeight: '400',
+    marginBottom: 6,
+  },
 
-  invoiceValue: { fontSize: 18, fontWeight: '600' },
+  loanValue: {
+    fontSize: fontSizes.large,
+    fontWeight: '600',
+  },
 });
