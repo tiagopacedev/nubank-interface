@@ -1,27 +1,29 @@
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import { RootStackParamList } from '../../Router';
 
-import { Colors } from '~/common/styles/root';
+import { colors } from '~/common/styles/global';
 
-type OverviewScreenNavigationProps = StackNavigationProp<RootStackParamList, 'Overview'>;
+const icon = require('../../../assets/icon.png');
 
-export default function Overview() {
+type OverviewScreenNavigationProps = StackNavigationProp<RootStackParamList, 'Login'>;
+
+export default function Login() {
   const navigation = useNavigation<OverviewScreenNavigationProps>();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <View>
-          <Text style={styles.title}>Hello World</Text>
-          <Text style={styles.subtitle}>This is the first page of your app.</Text>
-        </View>
+    <View style={styles.containerLogin}>
+      <View style={styles.centeredContent}>
+        <Image source={icon} />
+      </View>
+      <View>
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Details', { name: 'Dan' })}>
-          <Text style={styles.buttonText}>Usar senha do celular</Text>
+          style={styles.loginButton}
+          onPress={() => navigation.navigate('PrivateRoutes')}>
+          <Text style={styles.loginButtonText}>Usar senha do celular</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -29,7 +31,7 @@ export default function Overview() {
 }
 
 const styles = StyleSheet.create({
-  button: {
+  loginButton: {
     alignItems: 'center',
     backgroundColor: '#fff',
     borderRadius: 24,
@@ -45,27 +47,31 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
-  buttonText: {
+
+  loginButtonText: {
     fontSize: 16,
     fontWeight: '500',
     textAlign: 'center',
   },
-  container: {
+
+  containerLogin: {
     flex: 1,
     padding: 24,
-    backgroundColor: Colors.secondary,
+    backgroundColor: colors.secondary,
   },
-  main: {
+
+  centeredContent: {
     flex: 1,
-    maxWidth: 960,
-    marginHorizontal: 'auto',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+
   title: {
     fontSize: 64,
     fontWeight: 'bold',
     color: '#fff',
   },
+
   subtitle: {
     color: '#fff',
     fontSize: 36,
