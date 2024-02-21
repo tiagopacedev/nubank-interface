@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Linking } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import { colors, fontSizes } from '~/common/styles/global';
@@ -19,7 +19,7 @@ export function NuBlog() {
         contentContainerStyle={{ marginLeft: 24, paddingRight: 32 }}>
         {blogData.map((item) => (
           <View style={styles.blogItem} key={item.id}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL('https://nubank.com.br/')}>
               <Image style={styles.image} source={item.img} />
 
               <View style={styles.blogInfo}>
