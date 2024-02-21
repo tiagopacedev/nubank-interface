@@ -1,12 +1,12 @@
-import { Ionicons } from '@expo/vector-icons';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Feather, Tablet } from 'react-native-feather';
+import { Tablet } from 'react-native-feather';
+
+import { colors } from '~/common/styles/global';
 
 export default function Card() {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.myCards}>
-        {/* <Ionicons name="journal-outline" size={20} /> */}
         <Tablet width={20} height={20} color="#000" style={{ marginLeft: 16 }} />
         <Text style={styles.textcard}>Meus Cartões</Text>
       </TouchableOpacity>
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     paddingRight: 24,
     paddingBottom: 8,
     paddingLeft: 24,
+    backgroundColor: colors.background,
   },
 
   myCards: {
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 18,
     borderRadius: 15,
-    backgroundColor: '#D9D9D9',
+    backgroundColor: colors.lightGray,
   },
 
   textcard: {

@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Colors } from '~/common/styles/root';
+import { colors, fontSizes } from '~/common/styles/global';
 
 export function CreditCard() {
   return (
@@ -36,14 +36,18 @@ const styles = StyleSheet.create({
     paddingRight: 24,
     paddingBottom: 24,
     paddingLeft: 24,
-    borderBottomColor: '#D9D9D9',
+    borderBottomColor: colors.lightGray,
     borderBottomWidth: 2,
+    backgroundColor: colors.background,
   },
 
-  creditCardView: { flexDirection: 'row', justifyContent: 'space-between' },
+  creditCardView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 
   title: {
-    fontSize: 18,
+    fontSize: fontSizes.large,
     fontWeight: '500',
     marginBottom: 16,
     color: 'black',
@@ -51,11 +55,22 @@ const styles = StyleSheet.create({
 
   invoiceInfo: {},
 
-  invoiceTitle: { fontSize: 16, fontWeight: '400', marginBottom: 6 },
+  invoiceTitle: {
+    fontSize: fontSizes.medium,
+    fontWeight: '400',
+    marginBottom: 6,
+  },
 
-  invoiceValue: { fontSize: 18, fontWeight: '600' },
+  invoiceValue: {
+    fontSize: fontSizes.large,
+    fontWeight: '600',
+  },
 
-  invoiceDueDate: { fontSize: 14, color: 'gray', marginTop: 16 },
+  invoiceDueDate: {
+    fontSize: fontSizes.small,
+    color: 'gray',
+    marginTop: 16,
+  },
 
   buttonContainer: {
     flexDirection: 'row',
@@ -64,7 +79,7 @@ const styles = StyleSheet.create({
   },
 
   buttonPay: {
-    backgroundColor: '#CF0505',
+    backgroundColor: colors.error,
     padding: 10,
     borderRadius: 20,
     width: '40%',
@@ -73,7 +88,7 @@ const styles = StyleSheet.create({
   },
 
   buttonInstallments: {
-    backgroundColor: '#D9D9D9',
+    backgroundColor: colors.lightGray,
     padding: 12,
     borderRadius: 20,
     width: '40%',

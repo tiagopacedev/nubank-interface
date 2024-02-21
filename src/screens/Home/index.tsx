@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, View } from 'react-native';
+import { SafeAreaView, ScrollView } from 'react-native';
 
 import Cards from './components/Cards';
 import { CreditCard } from './components/CreditCard';
