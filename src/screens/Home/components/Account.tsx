@@ -2,8 +2,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { View, StyleSheet, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import Cards from './Cards';
-import { optionView } from './optionView';
+import { optionView } from '../../../utils/data/optionView';
+
+import { colors, fontSizes } from '~/common/styles/global';
 
 interface AccountProps {
   showBalance: boolean;
@@ -38,7 +39,7 @@ export default function Account(props: AccountProps) {
           {optionView.map((item: any, index: number) => (
             <TouchableOpacity key={index} style={styles.optionView}>
               <View style={styles.optionIcon}>
-                <Ionicons name={item.icon} size={20} />
+                <Ionicons name={item.icon} size={22} />
               </View>
               <Text style={styles.optionTitle}>{item.name}</Text>
             </TouchableOpacity>
@@ -53,19 +54,26 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 30,
     paddingRight: 24,
-    // paddingBottom: 8,
     paddingLeft: 24,
+    backgroundColor: colors.background,
   },
 
-  accountView: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  accountView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 
   title: {
-    fontSize: 18,
+    fontSize: fontSizes.large,
     fontWeight: '500',
     marginBottom: 8,
   },
 
-  totalBalance: { fontSize: 20, fontWeight: '500' },
+  totalBalance: {
+    fontSize: fontSizes.large,
+    fontWeight: '500',
+  },
 
   totalBalanceHidden: {
     flexDirection: 'row',
@@ -86,19 +94,28 @@ const styles = StyleSheet.create({
   optionViewContainer: {
     paddingTop: 30,
     paddingBottom: 8,
+    backgroundColor: colors.background,
   },
 
-  optionView: { alignItems: 'center', marginRight: 4 },
+  optionView: {
+    alignItems: 'center',
+    marginRight: 4,
+  },
 
   optionIcon: {
     height: width * 0.2,
     width: width * 0.2,
     marginBottom: 10,
-    backgroundColor: '#D9D9D9',
+    backgroundColor: colors.lightGray,
     borderRadius: 99,
     alignItems: 'center',
     justifyContent: 'center',
   },
 
-  optionTitle: { fontSize: 14, fontWeight: '600', width: 82, textAlign: 'center' },
+  optionTitle: {
+    fontSize: 14,
+    fontWeight: '600',
+    width: 82,
+    textAlign: 'center',
+  },
 });
