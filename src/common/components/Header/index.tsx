@@ -1,10 +1,8 @@
-import { Ionicons } from '@expo/vector-icons';
+import { Feather, Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
-import { Eye, EyeOff, Feather } from 'react-native-feather';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { Colors } from '~/common/styles/root';
+import { colors, fontSizes } from '~/common/styles/global';
 import Account from '~/screens/Home/components/Account';
 
 export function Header() {
@@ -15,26 +13,26 @@ export function Header() {
       <View style={styles.container}>
         <View style={styles.menu}>
           <TouchableOpacity style={styles.profile}>
-            <Ionicons name="image-outline" size={20} color="#fff" />
+            <Ionicons name="image-outline" size={24} color="#fff" />
             <View style={styles.dot} />
           </TouchableOpacity>
 
           <View style={styles.options}>
             <TouchableOpacity onPress={() => setShowBalance(!showbalance)}>
               {showbalance ? (
-                <Eye width={20} height={20} color="#fff" />
+                <Feather name="eye" size={22} color="#fff" />
               ) : (
-                <EyeOff width={20} height={20} color="#fff" />
+                <Feather name="eye-off" size={22} color="#fff" />
               )}
             </TouchableOpacity>
             <TouchableOpacity>
-              <Ionicons name="help-circle-outline" size={20} color="#fff" />
+              <Ionicons name="help-circle-outline" size={22} color="#fff" />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Ionicons name="person-add-outline" size={20} color="#fff" />
+              <Ionicons name="person-add-outline" size={22} color="#fff" />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Ionicons name="shield-outline" size={20} color="#fff" />
+              <Ionicons name="shield-outline" size={22} color="#fff" />
             </TouchableOpacity>
           </View>
         </View>
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     width: '100%',
     // height: '24%',
-    backgroundColor: Colors.secondary,
+    backgroundColor: colors.secondary,
   },
 
   menu: {
@@ -88,7 +86,7 @@ const styles = StyleSheet.create({
 
   profileName: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: fontSizes.large,
     fontWeight: 'bold',
   },
 
